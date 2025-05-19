@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS</title>
+    <link rel="stylesheet" href="lib/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+
+        .custom-btn-new {
+            background-color: yellowgreen;
+            color: black;
+        }
+
+        .images{
+            width: 100vw;
+            height: 100vh;
+            opacity: 65%;
+        }
+        .image-container {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            box-sizing: border-box;
+            width: 90%;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .custom-btn-get-all {
+            background-color: gold;
+            color: black;
+        }
+        .button-spacing {
+            margin-right: 20px;
+            margin-left: 300px;
+        }
+        .button-spacing2 {
+            margin-right: 30px;
+
+        }
+        .button-spacing3{
+            margin-left: 600px;
+
+        }
+        .button-spacing4{
+            margin-left: 900px;
+        }
+        .button-spacing5{
+            margin-right: 50px;
+
+        }
+
+        /*.button-bar{*/
+        /*    margin-right: 20px;*/
+        /*}*/
+
+        .content-spacing{
+            margin-top: 20px;
+        }
+        .content-spacing1{
+            margin-top: 30px;
+
+        }
+        .register-buttons{
+            margin-left: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<section id="landing-page">
+    <header id="main-header">
+        <nav class="navbar bg-body-tertiary row-gap-3 fixed-top">
+            <div class="container-fluid d-flex align-items-center">
+
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assest/groceries.png" alt="Logo" width="30" height="25" class="d-inline-block align-text-top me-2">
+                    BELLO POS Systems
+                </a>
+
+
+                <ul class="nav justify-content-center mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#landing-page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#customer-section"> Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#store-section"> Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order-section">Orders</a>
+                    </li>
+
+                </ul>
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assest/img.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top me-2">
+                </a>
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assest/img_1.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top me-2">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="image-container">
+        <img class="images" src="assest/clothing.webp" alt="Clothing Store">
+        <h1 class="image-text">Welcome to BELLO Clothing<br>Where Fashion and Elegance Meet</h1>
+    </div>
+
+</section>
+
+<section id="customer-section">
+
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+
+        <div class="fw-semibold text-nowrap bg-body-secondary border"  style="width: 10rem;">
+            Customer Manage
+        </div>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 " style="width: 300px;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-new button-spacing" >+ New</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-get-all button-spacing2">Get All</button>
+        </form>
+    </nav>
+
+</section>
+
+<!--<div class="text-nowrap bg-body-secondary border mx-auto p-2" style="width: 300px;">-->
+<!--    Search here-->
+<!--</div>-->
+<section>
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+    <table class="table table-striped-columns content-spacing1">
+        <thead>
+        <tr>
+            <th scope="col ">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">NIC</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="customer-tbody">
+        </tbody>
+
+    </table>
+    </nav>
+    <div class="d-flex justify-content-around button-bar">
+<!--        <button type="button" class="btn btn-success button-spacing3">Save</button>-->
+        <button type="button" class="btn btn-warning button-spacing4">Update</button>
+        <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">Register Customer</div>
+            <div class="card-body">
+                <form>
+<!--                    <div class="mb-3">-->
+<!--                        <label class="form-label">Customer ID</label>-->
+<!--                        <input type="text" class="form-control">-->
+<!--                    </div>-->
+                    <div class="mb-3">
+                        <label class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer NIC</label>
+                        <input type="text" class="form-control" id="nic">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer Address</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer Phone</label>
+                        <input type="text" class="form-control" id="phone">
+                    </div>
+                    <div class="register-buttons">
+                        <button id="customer_save" type="button" class="btn btn-outline-primary">Submit</button>
+                        <button  id="customer_reset" type="button" class="btn btn-outline-danger">Reset</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="store-section">
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+
+        <div class="fw-semibold text-nowrap bg-body-secondary border"  style="width: 10rem;">
+            Item Manage
+        </div>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 " style="width: 300px;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-new button-spacing" >+ New</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-get-all button-spacing2">Get All</button>
+        </form>
+    </nav>
+
+</section>
+
+<section>
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+        <table class="table table-striped-columns content-spacing1">
+            <thead>
+            <tr>
+                <th scope="col ">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Supplier</th>
+                <th scope="col">Qty</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">001</th>
+                <td>carpet</td>
+                <td>1500.00</td>
+                <td>Phonix</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <th scope="row">002</th>
+                <td>wine Glass</td>
+                <td>600.00</td>
+                <td>Cristel</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <th scope="row">003</th>
+                <td>posylen vas</td>
+                <td>2400.00</td>
+                <td>Chuing</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th scope="row">004</th>
+                <td>Lampshed</td>
+                <td>3000.00</td>
+                <td>Xin</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+    </nav>
+    <div class="d-flex justify-content-around button-bar">
+        <button type="button" class="btn btn-success button-spacing3">Save</button>
+        <button type="button" class="btn btn-warning button-spacing4">Update</button>
+        <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-success text-white" >Add New Item</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Item Code :</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item Name :</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price :</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Supplier :</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quantity :</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="register-buttons">
+                        <button type="button" class="btn btn-outline-primary">Submit</button>
+                        <button type="button" class="btn btn-outline-danger">Reset</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="order-section">
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+
+        <div class="fw-semibold text-nowrap bg-body-secondary border"  style="width: 10rem;">
+            Order Manage
+        </div>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 " style="width: 300px;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-new button-spacing" >+ New</button>
+            <button class="btn btn-outline-light btn-sm custom-btn-get-all button-spacing2">Get All</button>
+        </form>
+    </nav>
+
+</section>
+
+<!--<div class="text-nowrap bg-body-secondary border mx-auto p-2" style="width: 300px;">-->
+<!--    Search here-->
+<!--</div>-->
+<section>
+    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+        <table class="table table-striped-columns content-spacing1">
+            <thead>
+            <tr>
+                <th scope="col ">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">NIC</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1001</th>
+                <td>Mark Otto</td>
+                <td>200487822345</td>
+                <td>Colombo</td>
+                <td>0712342231</td>
+            </tr>
+            <tr>
+                <th scope="row">1002</th>
+                <td>Jacob Thorton</td>
+                <td>200987899879</td>
+                <td>Panadura</td>
+                <td>0776454663</td>
+            </tr>
+            <tr>
+                <th scope="row">1003</th>
+                <td>Ama Silva</td>
+                <td>200609200780</td>
+                <td>Colombo</td>
+                <td>0712345567</td>
+            </tr>
+            <tr>
+                <th scope="row">1004</th>
+                <td>Roshel Perera</td>
+                <td>200678990780</td>
+                <td>Colombo</td>
+                <td>071234334</td>
+            </tr>
+            </tbody>
+        </table>
+    </nav>
+    <div class="d-flex justify-content-around button-bar">
+        <button type="button" class="btn btn-success button-spacing3">Save</button>
+        <button type="button" class="btn btn-warning button-spacing4">Update</button>
+        <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">Register Customer</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Customer ID</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer NIC</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer Address</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer Phone</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="register-buttons">
+                        <button type="button" class="btn btn-outline-primary">Submit</button>
+                        <button type="button" class="btn btn-outline-danger">Reset</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></script>-->
+</body>
+</html>
