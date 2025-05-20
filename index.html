@@ -91,16 +91,16 @@
                 <ul class="nav justify-content-center mx-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#landing-page">Home</a>
+                        <a  id="home-nav" class="nav-link" href="#landing-page">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#customer-section"> Customer</a>
+                        <a id="customer-nav" class="nav-link active" aria-current="page" href="#customer-section"> Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#store-section"> Store</a>
+                        <a id="store-nav" class="nav-link" href="#store-section"> Store</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#order-section">Orders</a>
+                        <a id="order-nav" class="nav-link" href="#order-section">Orders</a>
                     </li>
 
                 </ul>
@@ -114,14 +114,14 @@
         </nav>
     </header>
 
-    <div class="image-container">
+    <div id="home-page" class="image-container">
         <img class="images" src="assest/clothing.webp" alt="Clothing Store">
         <h1 class="image-text">Welcome to BELLO Clothing<br>Where Fashion and Elegance Meet</h1>
     </div>
 
 </section>
 
-<section id="customer-section">
+<section class="customers-section" id="customer-section">
 
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
 
@@ -142,7 +142,7 @@
 <!--<div class="text-nowrap bg-body-secondary border mx-auto p-2" style="width: 300px;">-->
 <!--    Search here-->
 <!--</div>-->
-<section>
+<section class="customers-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
         <table class="table table-striped-columns content-spacing1">
             <thead>
@@ -193,7 +193,7 @@
                         <input type="text" class="form-control" id="phone">
                     </div>
                     <div class="register-buttons">
-                        <button id="customer_save" type="button" class="btn btn-outline-primary">Submit</button>
+                        <button id="customer_save" type="button" class="btn btn-outline-primary">Save</button>
                         <button  id="customer_reset" type="button" class="btn btn-outline-danger">Reset</button>
 
                     </div>
@@ -205,7 +205,7 @@
 
 </section>
 
-<section id="store-section">
+<section class="store-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
 
         <div class="fw-semibold text-nowrap bg-body-secondary border"  style="width: 10rem;">
@@ -222,7 +222,7 @@
 
 </section>
 
-<section>
+<section class="store-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
         <table class="table table-striped-columns content-spacing1">
             <thead>
@@ -234,40 +234,12 @@
                 <th scope="col">Qty</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">001</th>
-                <td>carpet</td>
-                <td>1500.00</td>
-                <td>Phonix</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <th scope="row">002</th>
-                <td>wine Glass</td>
-                <td>600.00</td>
-                <td>Cristel</td>
-                <td>70</td>
-            </tr>
-            <tr>
-                <th scope="row">003</th>
-                <td>posylen vas</td>
-                <td>2400.00</td>
-                <td>Chuing</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <th scope="row">004</th>
-                <td>Lampshed</td>
-                <td>3000.00</td>
-                <td>Xin</td>
-                <td>40</td>
-            </tr>
+            <tbody id="item-tbody">
             </tbody>
         </table>
     </nav>
     <div class="d-flex justify-content-around button-bar">
-        <button type="button" class="btn btn-success button-spacing3">Save</button>
+<!--        <button type="button" class="btn btn-success button-spacing3">Save</button>-->
         <button type="button" class="btn btn-warning button-spacing4">Update</button>
         <button type="button" class="btn btn-danger button-spacing5">Delete</button>
     </div>
@@ -277,29 +249,29 @@
             <div class="card-header bg-success text-white" >Add New Item</div>
             <div class="card-body">
                 <form>
-                    <div class="mb-3">
-                        <label class="form-label">Item Code :</label>
-                        <input type="text" class="form-control">
-                    </div>
+<!--                    <div class="mb-3">-->
+<!--                        <label class="form-label">Item Code :</label>-->
+<!--                        <input type="text" class="form-control">-->
+<!--                    </div>-->
                     <div class="mb-3">
                         <label class="form-label">Item Name :</label>
-                        <input type="text" class="form-control">
+                        <input id="item-name" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Price :</label>
-                        <input type="text" class="form-control">
+                        <input id="price" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Supplier :</label>
-                        <input type="text" class="form-control">
+                        <input id="supplier" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Quantity :</label>
-                        <input type="text" class="form-control">
+                        <input id="qty" type="text" class="form-control">
                     </div>
                     <div class="register-buttons">
-                        <button type="button" class="btn btn-outline-primary">Submit</button>
-                        <button type="button" class="btn btn-outline-danger">Reset</button>
+                        <button id="item_save" type="button" class="btn btn-outline-primary">Save</button>
+                        <button  id="item_reset" type="button" class="btn btn-outline-danger">Reset</button>
 
                     </div>
 
@@ -310,7 +282,7 @@
 
 </section>
 
-<section id="order-section">
+<section class="order-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
 
         <div class="fw-semibold text-nowrap bg-body-secondary border"  style="width: 10rem;">
@@ -330,7 +302,7 @@
 <!--<div class="text-nowrap bg-body-secondary border mx-auto p-2" style="width: 300px;">-->
 <!--    Search here-->
 <!--</div>-->
-<section>
+<section class="order-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
         <table class="table table-striped-columns content-spacing1">
             <thead>
@@ -422,7 +394,52 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
 
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></script>-->
+
+<script>
+
+
+
+    $(".customers-section").css("display", "none");
+
+    $("#customer-nav").on('click',function (){
+
+        $(".customers-section").css("display","block");
+        $(".store-section").css("display","none");
+        $(".order-section").css("display","none");
+
+
+    })
+
+    $(".store-section").css("display", "none");
+
+    $("#store-nav").on('click',function (){
+
+        $(".customers-section").css("display","none");
+        $(".store-section").css("display","block");
+        $(".order-section").css("display","none");
+
+
+    })
+
+    $(".order-section").css("display", "none");
+
+    $("#order-nav").on('click',function (){
+
+        $(".customers-section").css("display","none");
+        $(".store-section").css("display","none");
+        $(".order-section").css("display","block");
+
+
+    })
+
+
+
+
+</script>
+
+
 </body>
 </html>
