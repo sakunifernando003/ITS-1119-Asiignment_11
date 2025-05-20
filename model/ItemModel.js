@@ -1,5 +1,5 @@
 export default class ItemModel{
-    constructor(code,name,price,supplier,qty) {
+    constructor(name,price,supplier,qty) {
 
         // this.code =code;
         this.name= name;
