@@ -137,67 +137,69 @@
         </form>
     </nav>
 
-</section>
 
-<section class="customers-section d-flex align-items-start mt-3" >
+    <section class="customers-section d-flex align-items-start mt-3" >
 
-    <div class="col-md-4 me-3">
-        <div class="card">
-            <div class="card-header bg-success text-white">Register Customer</div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Name</label>
-                        <input type="text" class="form-control" id="name">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer NIC</label>
-                        <input type="text" class="form-control" id="nic">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Address</label>
-                        <input type="text" class="form-control" id="address">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Phone</label>
-                        <input type="text" class="form-control" id="phone">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="register-buttons">
-                        <button id="customer_save" type="button" class="btn btn-outline-success">Save</button>
-                        <button id="customer_delete" type="button" class="btn btn-outline-danger">Delete</button>
-                        <button  id="customer_clear" type="button" class="btn btn-outline-primary">Clear</button>
-                        <button id="customer_Update" type="button" class="btn btn-outline-warning">Update</button>
-                    </div>
-                </form>
+        <div class="col-md-4 me-3">
+            <div class="card">
+                <div class="card-header bg-success text-white">Register Customer</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" id="name">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Customer NIC</label>
+                            <input type="text" class="form-control" id="nic">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Customer Address</label>
+                            <input type="text" class="form-control" id="address">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Customer Phone</label>
+                            <input type="text" class="form-control" id="phone">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="register-buttons">
+                            <button id="customer_save" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="customer_delete" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button  id="customer_clear" type="button" class="btn btn-outline-primary">Clear</button>
+                            <button id="customer_Update" type="button" class="btn btn-outline-warning">Update</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="flex-grow-1">
-        <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
-            <table class="table table-striped-columns content-spacing1">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">NIC</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Phone</th>
-                </tr>
-                </thead>
-                <tbody id="customer-tbody">
-                </tbody>
-            </table>
-        </nav>
-        <div class="d-flex justify-content-around button-bar">
-            <button type="button" class="btn btn-warning button-spacing4">Update</button>
-            <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+        <div class="flex-grow-1">
+            <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+                <table class="table table-striped-columns content-spacing1">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">NIC</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customer-tbody">
+                    </tbody>
+                </table>
+            </nav>
+            <div class="d-flex justify-content-around button-bar">
+                <button type="button" class="btn btn-warning button-spacing4">Update</button>
+                <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+            </div>
         </div>
-    </div>
+    </section>
+
+
 </section>
 
 <section class="store-section">
@@ -213,68 +215,74 @@
             <button class="btn btn-outline-light btn-sm custom-btn-get-all button-spacing2">Get All</button>
         </form>
     </nav>
-</section>
 
-<section class="store-section d-flex align-items-start mt-3">
+    <section class="store-section d-flex align-items-start mt-3">
 
-    <div class="col-md-4 me-3">
-        <div class="card">
-            <div class="card-header bg-success text-white">Add New Item</div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Item Name:</label>
-                        <input id="item-name" type="text" class="form-control">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Price:</label>
-                        <input id="price" type="text" class="form-control">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Supplier:</label>
-                        <input id="supplier" type="text" class="form-control">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Quantity:</label>
-                        <input id="qty" type="text" class="form-control">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="register-buttons">
-                        <button id="item_save" type="button" class="btn btn-outline-success">Save</button>
-                        <button id="item_delete" type="button" class="btn btn-outline-danger">Delete</button>
-                        <button  id="item_clear"  type="button" class="btn btn-outline-primary">Clear</button>
-                        <button id="item_Update" type="button" class="btn btn-outline-warning">Update</button>
-                    </div>
-                </form>
+        <div class="col-md-4 me-3">
+            <div class="card">
+                <div class="card-header bg-success text-white">Add New Item</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Item Name:</label>
+                            <input id="item-name" type="text" class="form-control">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price:</label>
+                            <input id="price" type="text" class="form-control">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Supplier:</label>
+                            <input id="supplier" type="text" class="form-control">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Quantity:</label>
+                            <input id="qty" type="text" class="form-control">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="register-buttons">
+                            <button id="item_save" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="item_delete" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button  id="item_clear"  type="button" class="btn btn-outline-primary">Clear</button>
+                            <button id="item_Update" type="button" class="btn btn-outline-warning">Update</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="flex-grow-1">
-        <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
-            <table class="table table-striped-columns content-spacing1">
-                <thead>
-                <tr>
-                    <th scope="col">Code</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Supplier</th>
-                    <th scope="col">Qty</th>
-                </tr>
-                </thead>
-                <tbody id="item-tbody"></tbody>
-            </table>
-        </nav>
-        <div class="d-flex justify-content-around button-bar">
-            <button type="button" class="btn btn-warning button-spacing4">Update</button>
-            <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+        <div class="flex-grow-1">
+            <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
+                <table class="table table-striped-columns content-spacing1">
+                    <thead>
+                    <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Supplier</th>
+                        <th scope="col">Qty</th>
+                    </tr>
+                    </thead>
+                    <tbody id="item-tbody"></tbody>
+                </table>
+            </nav>
+            <div class="d-flex justify-content-around button-bar">
+                <button type="button" class="btn btn-warning button-spacing4">Update</button>
+                <button type="button" class="btn btn-danger button-spacing5">Delete</button>
+            </div>
         </div>
-    </div>
+    </section>
+
+
 </section>
+
+
+
+
 
 <section class="order-section">
     <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
@@ -291,98 +299,139 @@
         </form>
     </nav>
 
-</section>
 
-<!--<div class="text-nowrap bg-body-secondary border mx-auto p-2" style="width: 300px;">-->
-<!--    Search here-->
-<!--</div>-->
-<section class="order-section">
-    <nav class="navbar bg-body-tertiary row-gap-3 content-spacing">
-        <table class="table table-striped-columns content-spacing1">
-            <thead>
-            <tr>
-                <th scope="col ">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">NIC</th>
-                <th scope="col">Address</th>
-                <th scope="col">Phone</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1001</th>
-                <td>Mark Otto</td>
-                <td>200487822345</td>
-                <td>Colombo</td>
-                <td>0712342231</td>
-            </tr>
-            <tr>
-                <th scope="row">1002</th>
-                <td>Jacob Thorton</td>
-                <td>200987899879</td>
-                <td>Panadura</td>
-                <td>0776454663</td>
-            </tr>
-            <tr>
-                <th scope="row">1003</th>
-                <td>Ama Silva</td>
-                <td>200609200780</td>
-                <td>Colombo</td>
-                <td>0712345567</td>
-            </tr>
-            <tr>
-                <th scope="row">1004</th>
-                <td>Roshel Perera</td>
-                <td>200678990780</td>
-                <td>Colombo</td>
-                <td>071234334</td>
-            </tr>
-            </tbody>
-        </table>
-    </nav>
-    <div class="d-flex justify-content-around button-bar">
-        <button type="button" class="btn btn-success button-spacing3">Save</button>
-        <button type="button" class="btn btn-warning button-spacing4">Update</button>
-        <button type="button" class="btn btn-danger button-spacing5">Delete</button>
-    </div>
 
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header bg-success text-white">Register Customer</div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Customer ID</label>
-                        <input type="text" class="form-control">
+    <section id="orderDetails">
+        <main class="container mt-5">
+            <div class="row">
+                <!-- Invoice Details -->
+                <div class="col-md-4">
+                    <div class="card" id="card-order">
+                        <div class="card-header">Invoice Details</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="oId" class="form-label">Order ID:</label>
+                                <input type="text" class="form-control" id="oId" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date:</label>
+                                <input type="date" class="form-control" id="date" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cId" class="form-label">Customer ID:</label>
+                                <select class="form-select select_item" aria-label="Default select example" id="cId">
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cus_name" class="form-label">Customer Name:</label>
+                                <input type="text" class="form-control" id="cus_name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cus_address" class="form-label">Address:</label>
+                                <input type="text" class="form-control" id="cus_address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cus_contact" class="form-label">Contact:</label>
+                                <input type="text" class="form-control" id="cus_contact">
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer NIC</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Address</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Customer Phone</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="register-buttons">
-                        <button type="button" class="btn btn-outline-primary">Submit</button>
-                        <button type="button" class="btn btn-outline-danger">Reset</button>
+                </div>
 
+                <!-- Item Select -->
+                <div class="col-md-4">
+                    <div class="card" id="card-item">
+                        <div class="card-header">Item Select</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Item Code:</label>
+                                <!--                            <input type="text" class="form-control" id="iCode" />-->
+                                <select class="form-select select_item" aria-label="Default select example" id="order_item_id">
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="item_name" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="item_name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="item_price">Price:</label>
+                                <input type="text" class="form-control" id="item_price" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="item_qty">Qty On Hand:</label>
+                                <input type="text" class="form-control" id="item_qty" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="order_qty">Order Qty:</label>
+                                <input type="text" class="form-control" id="order_qty" />
+                            </div>
+                            <!--                        <div class="d-flex gap-2">-->
+                            <!--                            <button class="btn btn-success w-100" id="orderDetails_save">Add Item</button>-->
+                            <!--                            <button class="btn btn-warning w-100" id="orderDetails_update">Update</button>-->
+                            <!--                            <button class="btn btn-danger w-100" id="orderDetails_delete">Delete</button>-->
+                            <!--                        </div>-->
+                            <button type="button" class="btn btn-primary" id="btn_add_item">Add Item</button>
+                        </div>
                     </div>
+                </div>
 
-                </form>
+                <!-- Total & Payment -->
+                <div class="col-md-4" id="card-total">
+                    <div class="total-box border rounded p-3" >
+                        <label class="form-label">Total :</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Rs.</span>
+                            <input type="text" class="form-control" id="tot">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method:</label>
+                            <select class="form-select pay_method" aria-label="Default select example" id="pay_method">
+                                <option selected></option>
+                                <option value="Cash">Cash</option>
+                                <option value="Card">Card</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="discount">Discount:</label>
+                            <input type="text" class="form-control" id="discount" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="balance">Balance:</label>
+                            <input type="text" class="form-control" id="balance"/>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btn_purchase">Purchase</button>
+                    </div>
+                </div>
+
+                <!-- Order Table -->
+                <div class="mt-5">
+                    <table class="table table-striped" id="order_table">
+                        <thead class="table-success">
+                        <tr>
+                            <th scope="col">Order Id</th>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="order_tbody">
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
+        </main>
+    </section>
+
 
 </section>
+
+
 
 <script src="../lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
