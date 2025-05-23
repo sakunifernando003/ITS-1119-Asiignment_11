@@ -108,3 +108,119 @@ $("#customer-tbody").on('click', 'tr', function () {
     $("#address").val(address);
     $("#phone").val(phone);
 });
+
+let selectedCustomerIndex = null; // Track the index of the selected customer
+
+// Function to update customer data
+$('#customer_Update').on('click', function () {
+    if (selectedCustomerIndex === null) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please select a customer to update.',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+        });
+        return;
+    }
+
+    let name = $('#name').val();
+    let nic = $('#nic').val();
+    let address = $('#address').val();
+    let phone = $('#phone').val();
+
+    const isNameValid = validateField('#name', namePattern, "Invalid name.");
+    const isNicValid = validateField('#nic', nicPattern, "Invalid NIC.");
+    const isAddressValid = validateField('#address', addressPattern, "Invalid address.");
+    const isPhoneValid = validateField('#phone', phonePattern, "Invalid phone number.");
+
+    if (!isNameValid || !isNicValid || !isAddressValid || !isPhoneValid) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please correct the highlighted fields.',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+        });
+        return;
+    }
+
+    // Update the selected customer
+    customer_db[selectedCustomerIndex] = new CustomerModel(name, nic, address, phone);
+
+    // Reload the customer table
+    loadCustomer();
+
+    Swal.fire({
+        title: 'Updated Successfully!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+    });
+
+    // Reset form and index
+    $('#name, #nic, #address, #phone').val('').removeClass('is-valid is-invalid');
+    selectedCustomerIndex = null;
+});
+
+// Modify the click handler for selecting a customer
+$("#customer-tbody").on('click', 'tr', function () {
+    selectedCustomerIndex = $(this).index(); // Set the selected index
+    let obj = customer_db[selectedCustomerIndex];
+
+    $("#name").val(obj.name);
+    $("#nic").val(obj.nic);
+    $("#address").val(obj.address);
+    $("#phone").val(obj.phone);
+});
+
+// Function to delete a customer
+$('#customer_delete').on('click', function () {
+    if (selectedCustomerIndex === null) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please select a customer to delete.',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+        });
+        return;
+    }
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You won\'t be able to revert this!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Remove the selected customer
+            customer_db.splice(selectedCustomerIndex, 1);
+
+            // Reload the customer table
+            loadCustomer();
+
+            Swal.fire({
+                title: 'Deleted!',
+                text: 'The customer has been deleted.',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+            });
+
+            // Reset form and index
+            $('#name, #nic, #address, #phone').val('').removeClass('is-valid is-invalid');
+            selectedCustomerIndex = null;
+        }
+    });
+});
+
+// Modify the click handler for selecting a customer
+$("#customer-tbody").on('click', 'tr', function () {
+    selectedCustomerIndex = $(this).index(); // Set the selected index
+    let obj = customer_db[selectedCustomerIndex];
+
+    $("#name").val(obj.name);
+    $("#nic").val(obj.nic);
+    $("#address").val(obj.address);
+    $("#phone").val(obj.phone);
+});
+
