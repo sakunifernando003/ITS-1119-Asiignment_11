@@ -130,8 +130,9 @@
             Customer Manage
         </div>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input id="customerSearch" class="form-control me-2" style="width: 300px;" type="search" placeholder="Search" aria-label="Search" />
+            <button id="search" class="btn btn-outline-success" type="button">Search</button>
+
             <button class="btn btn-outline-light btn-sm custom-btn-new button-spacing">+ New</button>
             <button class="btn btn-outline-light btn-sm custom-btn-get-all button-spacing2">Get All</button>
         </form>
@@ -320,6 +321,9 @@
                             <div class="mb-3">
                                 <label for="cId" class="form-label">Customer ID:</label>
                                 <select class="form-select select_item" aria-label="Default select example" id="cId">
+                                    <option selected></option>
+                                    <option value="item1">001</option>
+                                    <option value="item2">002</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -347,6 +351,9 @@
                                 <label class="form-label">Item Code:</label>
                                 <!--                            <input type="text" class="form-control" id="iCode" />-->
                                 <select class="form-select select_item" aria-label="Default select example" id="order_item_id">
+                                    <option selected></option>
+                                    <option value="item1">I001</option>
+                                    <option value="item2">I002</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -365,11 +372,7 @@
                                 <label class="form-label" for="order_qty">Order Qty:</label>
                                 <input type="text" class="form-control" id="order_qty" />
                             </div>
-                            <!--                        <div class="d-flex gap-2">-->
-                            <!--                            <button class="btn btn-success w-100" id="orderDetails_save">Add Item</button>-->
-                            <!--                            <button class="btn btn-warning w-100" id="orderDetails_update">Update</button>-->
-                            <!--                            <button class="btn btn-danger w-100" id="orderDetails_delete">Delete</button>-->
-                            <!--                        </div>-->
+
                             <button type="button" class="btn btn-primary" id="btn_add_item">Add Item</button>
                         </div>
                     </div>

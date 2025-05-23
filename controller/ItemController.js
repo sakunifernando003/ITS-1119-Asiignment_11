@@ -8,7 +8,7 @@ const qtyPattern = /^[1-9]\d*$/;
 
 let selectedItemIndex = null;
 
-// Function to load items into the table
+
 function loadItem() {
     $('#item-tbody').empty();
     item_db.forEach((item, index) => {
@@ -47,7 +47,7 @@ $('#price').on('input', () => validateField('#price', pricePattern, "Invalid pri
 $('#supplier').on('input', () => validateField('#supplier', supplierPattern, "Invalid supplier name. Only letters and spaces (3-50 chars)."));
 $('#qty').on('input', () => validateField('#qty', qtyPattern, "Invalid quantity. Only positive integers are allowed."));
 
-// Save new item
+
 $('#item_save').on('click', function () {
     const isNameValid = validateField('#item-name', namePattern, "Invalid name.");
     const isPriceValid = validateField('#price', pricePattern, "Invalid price.");
@@ -81,7 +81,7 @@ $('#item_save').on('click', function () {
     });
 });
 
-// Select an item from the table
+
 $('#item-tbody').on('click', 'tr', function () {
     selectedItemIndex = $(this).index();
     const selectedItem = item_db[selectedItemIndex];
@@ -92,7 +92,7 @@ $('#item-tbody').on('click', 'tr', function () {
     $('#qty').val(selectedItem.qty);
 });
 
-// Update an existing item
+
 $('#item_Update').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
@@ -135,11 +135,11 @@ $('#item_Update').on('click', function () {
     });
 });
 
-// Delete an item
+
 $('#item-tbody').on('click', '.delete-btn', function () {
     const indexToDelete = $(this).data('index');
 
-    // Confirm deletion
+
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -149,8 +149,8 @@ $('#item-tbody').on('click', '.delete-btn', function () {
         cancelButtonText: 'No, cancel!'
     }).then((result) => {
         if (result.isConfirmed) {
-            item_db.splice(indexToDelete, 1); // Remove the item from the database
-            loadItem(); // Reload the table
+            item_db.splice(indexToDelete, 1);
+            loadItem();
             Swal.fire({
                 title: 'Deleted!',
                 text: 'The item has been deleted.',
@@ -161,17 +161,17 @@ $('#item-tbody').on('click', '.delete-btn', function () {
     });
 });
 
-// Function to reset form and clear selection
+
 function resetForm() {
     $('#item-name, #price, #supplier, #qty').val('').removeClass('is-valid is-invalid');
     selectedItemIndex = null;
 }
 
-// Initial load
+
 loadItem();
 
 
-// Function to delete a customer
+
 $('#item_delete').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
@@ -193,10 +193,10 @@ $('#item_delete').on('click', function () {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Remove the selected customer
+
             item_db.splice(selectedItemIndex, 1);
 
-            // Reload the customer table
+
             loadItem()
 
             Swal.fire({
@@ -206,16 +206,16 @@ $('#item_delete').on('click', function () {
                 confirmButtonText: 'Ok',
             });
 
-            // Reset form and index
+
             $('#item-name, #price, #supplier, #qty').val('').removeClass('is-valid is-invalid');
             selectedItemIndex = null;
         }
     });
 });
 
-// Modify the click handler for selecting a customer
+
 $("#item-tbody").on('click', 'tr', function () {
-    selectedItemIndex = $(this).index(); // Set the selected index
+    selectedItemIndex = $(this).index();
     let obj = item_db[selectedItemIndex];
 
     $('#item-name').val(selectedItem.name);

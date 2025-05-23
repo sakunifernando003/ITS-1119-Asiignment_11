@@ -6,22 +6,17 @@ const nicPattern = /^(\d{9}[VvXx]|\d{12})$/;
 const addressPattern = /^.{5,100}$/;
 const phonePattern = /^\d{10}$/;
 
-function loadCustomer() {
+function loadCustomer(customers = customer_db) {
     $('#customer-tbody').empty();
-    customer_db.map((customer, index) => {
-        let name = customer.name;
-        let nic = customer.nic;
-        let address = customer.address;
-        let phone = customer.phone;
-
+    customers.forEach((customer, index) => {
         let data = `<tr>
                         <td>${index + 1}</td>
-                        <td>${name}</td>
-                        <td>${nic}</td>
-                        <td>${address}</td>
-                        <td>${phone}</td>
+                        <td>${customer.name}</td>
+                        <td>${customer.nic}</td>
+                        <td>${customer.address}</td>
+                        <td>${customer.phone}</td>
                     </tr>`;
-        $(`#customer-tbody`).append(data);
+        $('#customer-tbody').append(data);
     });
 }
 
@@ -109,9 +104,9 @@ $("#customer-tbody").on('click', 'tr', function () {
     $("#phone").val(phone);
 });
 
-let selectedCustomerIndex = null; // Track the index of the selected customer
+let selectedCustomerIndex = null;
 
-// Function to update customer data
+
 $('#customer_Update').on('click', function () {
     if (selectedCustomerIndex === null) {
         Swal.fire({
@@ -143,10 +138,10 @@ $('#customer_Update').on('click', function () {
         return;
     }
 
-    // Update the selected customer
+
     customer_db[selectedCustomerIndex] = new CustomerModel(name, nic, address, phone);
 
-    // Reload the customer table
+
     loadCustomer();
 
     Swal.fire({
@@ -155,12 +150,12 @@ $('#customer_Update').on('click', function () {
         confirmButtonText: 'Ok',
     });
 
-    // Reset form and index
+
     $('#name, #nic, #address, #phone').val('').removeClass('is-valid is-invalid');
     selectedCustomerIndex = null;
 });
 
-// Modify the click handler for selecting a customer
+
 $("#customer-tbody").on('click', 'tr', function () {
     selectedCustomerIndex = $(this).index(); // Set the selected index
     let obj = customer_db[selectedCustomerIndex];
@@ -171,7 +166,7 @@ $("#customer-tbody").on('click', 'tr', function () {
     $("#phone").val(obj.phone);
 });
 
-// Function to delete a customer
+
 $('#customer_delete').on('click', function () {
     if (selectedCustomerIndex === null) {
         Swal.fire({
@@ -193,10 +188,10 @@ $('#customer_delete').on('click', function () {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Remove the selected customer
+
             customer_db.splice(selectedCustomerIndex, 1);
 
-            // Reload the customer table
+
             loadCustomer();
 
             Swal.fire({
@@ -206,14 +201,14 @@ $('#customer_delete').on('click', function () {
                 confirmButtonText: 'Ok',
             });
 
-            // Reset form and index
+
             $('#name, #nic, #address, #phone').val('').removeClass('is-valid is-invalid');
             selectedCustomerIndex = null;
         }
     });
 });
 
-// Modify the click handler for selecting a customer
+
 $("#customer-tbody").on('click', 'tr', function () {
     selectedCustomerIndex = $(this).index(); // Set the selected index
     let obj = customer_db[selectedCustomerIndex];
@@ -222,5 +217,48 @@ $("#customer-tbody").on('click', 'tr', function () {
     $("#nic").val(obj.nic);
     $("#address").val(obj.address);
     $("#phone").val(obj.phone);
+});
+
+$('#search').on('click', function () {
+    const searchTerm = $('#customerSearch').val().toLowerCase().trim();
+
+    if (!searchTerm) {
+
+        loadCustomer();
+        return;
+    }
+
+
+    const filteredCustomers = customer_db.filter(customer => {
+        return customer.name.toLowerCase().includes(searchTerm) ||
+            customer.nic.toLowerCase().includes(searchTerm) ||
+            customer.phone.includes(searchTerm);
+    });
+
+
+    loadCustomer(filteredCustomers);
+});
+
+
+
+
+$('#search').on('click', function () {
+    const searchTerm = $('#customerSearch').val().toLowerCase().trim();
+
+    if (!searchTerm) {
+
+        loadCustomer();
+        return;
+    }
+
+
+    const filteredCustomers = customer_db.filter(customer => {
+        return customer.name.toLowerCase().includes(searchTerm) ||
+            customer.nic.toLowerCase().includes(searchTerm) ||
+            customer.phone.includes(searchTerm);
+    });
+
+
+    loadCustomer(filteredCustomers);
 });
 
